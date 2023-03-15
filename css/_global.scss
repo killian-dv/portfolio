@@ -7,11 +7,34 @@
 
 // Colors
 
-$background-color: #000;
-$primary-color: #fff;
+$black: #0f1825;
+$white: #fff;
+$grey: #6a6c6c;
+
+$transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 
 body {
-    // font-family: 'Fira Code', monospace;
-    background-color: $background-color;
-  }
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    background-color: $black;
+}
+
+h1, h2, h3 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    @media screen and (max-width: 479px) {
+        font-size: 2rem;
+    }
+    @media screen and (max-width: 767px) {
+        font-size: 2rem;
+    }
+    @media screen and (max-width: 991px) {
+        font-size: 2.25rem;
+    }
+}
