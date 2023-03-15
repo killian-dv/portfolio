@@ -35,18 +35,18 @@ h2 {
   }
 }
 
-main #skills .section-container, main #about .section-container {
+main #creations .section-container, main #skills .section-container, main #about .section-container {
   width: 80%;
   max-width: 1600px;
   margin: auto;
 }
 @media screen and (max-width: 768px) {
-  main #skills .section-container, main #about .section-container {
+  main #creations .section-container, main #skills .section-container, main #about .section-container {
     width: 90%;
   }
 }
 
-main #skills .section-container h2, main #about .section-container h2 {
+main #creations .section-container h2, main #skills .section-container h2, main #about .section-container h2 {
   font-size: 3.5rem;
   line-height: 1.2;
   font-weight: 700;
@@ -54,19 +54,19 @@ main #skills .section-container h2, main #about .section-container h2 {
   margin-bottom: 4.5rem;
 }
 @media screen and (max-width: 480px) {
-  main #skills .section-container h2, main #about .section-container h2 {
+  main #creations .section-container h2, main #skills .section-container h2, main #about .section-container h2 {
     font-size: 2rem;
     margin-bottom: 3.25rem;
   }
 }
 @media screen and (max-width: 768px) {
-  main #skills .section-container h2, main #about .section-container h2 {
+  main #creations .section-container h2, main #skills .section-container h2, main #about .section-container h2 {
     font-size: 2rem;
     margin-bottom: 3.25rem;
   }
 }
 @media screen and (max-width: 991px) {
-  main #skills .section-container h2, main #about .section-container h2 {
+  main #creations .section-container h2, main #skills .section-container h2, main #about .section-container h2 {
     font-size: 2.25rem;
   }
 }
@@ -284,9 +284,8 @@ main #home .section-container .button-container .secondary-button:hover {
   scale: 1.1;
 }
 main #home .wrapper-hero {
-  border: 20px #1c2531;
   border-radius: 10px;
-  background-color: #6164fa;
+  background-color: #33cccc;
   transform: rotateZ(-2deg);
   width: 80%;
   max-width: 1600px;
@@ -381,6 +380,12 @@ main #skills .section-container .grid-container .item p {
   font-weight: 300;
   text-align: center;
   color: #6a6c6c;
+}
+main #creations {
+  padding: 7rem 0;
+}
+main #creations .section-container {
+  overflow-x: visible;
 }
 main #creations .container {
   text-align: center;
