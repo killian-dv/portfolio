@@ -115,7 +115,7 @@ header nav #active:checked + .menu-btn:after {
 }
 header nav #active:checked ~ .wrapper ul li a {
   opacity: 1;
-  background-image: linear-gradient(#ef798a, #ef798a);
+  background-image: linear-gradient(#33cccc, #33cccc);
   background-repeat: no-repeat;
   background-size: 0% 100%;
   background-position-x: right;
@@ -613,6 +613,112 @@ main #contact .wrapper-1 .wrapper-2 .container .primary-button img {
   width: 15px;
   height: 15px;
   margin-left: 12px;
+}
+main #contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-image: linear-gradient(180deg, transparent 40%, #0f1825 0, #0f1825);
+}
+main #contact-page h2 {
+  margin-top: 2rem;
+}
+main #contact-page p {
+  margin-bottom: 4rem;
+}
+main #contact-page .wrapper-1 {
+  border-radius: 10px;
+  background-color: #33cccc;
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+  margin: auto;
+  transform: rotateZ(-2deg);
+  margin-bottom: 7rem;
+}
+main #contact-page .wrapper-1 .wrapper-2 {
+  border-radius: 10px;
+  background-color: #1c2531;
+  width: 100%;
+  height: 100%;
+  transform: rotateZ(4deg);
+  overflow: hidden;
+  padding: 3rem;
+}
+main #contact-page .wrapper-1 .wrapper-2 .container {
+  transform: rotateZ(-2deg);
+}
+main #contact-page .wrapper-1 .wrapper-2 .container form {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  gap: 1.5rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  color: #fff;
+}
+main #contact-page .wrapper-1 .wrapper-2 .container form .form-field-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  gap: 0.5rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+main #contact-page .wrapper-1 .wrapper-2 .container form .form-field-wrapper label {
+  font-family: "Josefin Sans", sans-serif;
+}
+main #contact-page .wrapper-1 .wrapper-2 .container form .form-field-wrapper input, main #contact-page .wrapper-1 .wrapper-2 .container form .form-field-wrapper textarea {
+  height: auto;
+  min-height: 2.75rem;
+  margin-bottom: 0;
+  padding: 0.75rem;
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: 5px;
+  background-color: hsla(0, 0%, 95.7%, 0.05);
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+main #contact-page .wrapper-1 .wrapper-2 .container form button {
+  background-color: #fff;
+  border: none;
+  padding: 24px 48px;
+  border-radius: 10px;
+  color: #0f1825;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+main #contact-page .wrapper-1 .wrapper-2 .container form button:hover {
+  scale: 1.1;
+}
+main #contact-page .wrapper-1 .wrapper-2 .container form button span {
+  white-space: nowrap;
+}
+main #contact-page .wrapper-1 .wrapper-2 .container form button img {
+  border: 0;
+  vertical-align: middle;
+  display: inline-block;
+  max-width: 100%;
+  width: 15px;
+  height: 15px;
+  margin-left: 12px;
+}
+main #contact-page .wrapper-1 .wrapper-2 .container form button:hover {
+  scale: 1.01;
+  cursor: pointer;
 }
 
 footer {

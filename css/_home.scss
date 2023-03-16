@@ -278,6 +278,69 @@ main {
             }
         }
     }
+    #contact-page{
+        @include flex($justify: center, $align: center, $gap: 0, $direction: column, $wrap: nowrap);
+        background-image: linear-gradient(180deg,transparent 40%, $black 0, $black);
+        h2 {
+            margin-top: 2rem;
+        }
+        p {
+            margin-bottom: 4rem;
+        }
+        .wrapper-1 {
+            border-radius: 10px;
+            background-color: $light-blue;
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            margin: auto;
+            transform: rotateZ(-2deg);
+            margin-bottom: 7rem;
+            .wrapper-2 {
+                border-radius: 10px;
+                background-color: $dark-blue;
+                width: 100%;
+                height: 100%;
+                transform: rotateZ(4deg);
+                overflow: hidden;
+                padding: 3rem;
+                .container {
+                    transform: rotateZ(-2deg);
+                    form {
+                        @include flex($justify: center, $align: left, $gap: 1.5rem, $direction: column, $wrap: nowrap);
+                        color: $white;
+                        .form-field-wrapper {
+                            @include flex($justify: center, $align: left, $gap: 0.5rem, $direction: column, $wrap: nowrap);
+                            label {
+                                font-family: 'Josefin Sans', sans-serif;
+                            }
+                            input, textarea {
+                                height: auto;
+                                min-height: 2.75rem;
+                                margin-bottom: 0;
+                                padding: 0.75rem;
+                                border: 1px solid hsla(0,0%,100%,.1);
+                                border-radius: 5px;
+                                background-color: hsla(0,0%,95.7%,.05);
+                                color: #fff;
+                                font-size: 1rem;
+                                line-height: 1.6;
+                                font-family: 'Plus Jakarta Sans', sans-serif;
+                            }
+                        }
+                        button {
+                            @include button($bg-color:$white, $border:none, $padding:24px 48px, $color:$black);
+                            width: 100%;
+                            &:hover {
+                                scale: 1.01;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
