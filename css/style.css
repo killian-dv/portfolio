@@ -460,7 +460,7 @@ main #creations .container {
   justify-content: center;
   align-items: center;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
   main #creations .container {
     flex-direction: column;
   }
@@ -477,6 +477,14 @@ main #creations .container .card-item {
   align-items: center;
   cursor: pointer;
 }
+@media screen and (max-width: 991px) {
+  main #creations .container .card-item {
+    width: 100%;
+    height: auto;
+    min-height: 20vh;
+    padding: 2rem;
+  }
+}
 main #creations .container .card-item .card-item-content {
   display: none;
   background-color: #fff;
@@ -487,6 +495,11 @@ main #creations .container .card-item .card-item-content {
   justify-content: center;
   gap: 1rem;
   align-items: center;
+}
+@media screen and (max-width: 480px) {
+  main #creations .container .card-item .card-item-content {
+    max-width: 100%;
+  }
 }
 main #creations .container .card-item .card-item-content h4 {
   font-size: 1.5rem;
@@ -558,6 +571,11 @@ main #contact .wrapper-1 .wrapper-2 .container {
   flex-direction: row;
   flex-wrap: nowrap;
   padding: 5rem 4rem;
+}
+@media screen and (max-width: 768px) {
+  main #contact .wrapper-1 .wrapper-2 .container {
+    flex-direction: column;
+  }
 }
 main #contact .wrapper-1 .wrapper-2 .container .cta-text {
   color: #fff;

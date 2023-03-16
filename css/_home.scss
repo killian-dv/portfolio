@@ -188,7 +188,7 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 991px) {
                 flex-direction: column;
             }
             .card-item {
@@ -202,6 +202,12 @@ main {
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
+                @media screen and (max-width: 991px) {
+                    width: 100%;
+                    height: auto;
+                    min-height: 20vh;
+                    padding: 2rem;
+                }
                 .card-item-content {
                     display: none;
                     background-color: $white;
@@ -212,6 +218,9 @@ main {
                     justify-content: center;
                     gap: 1rem;
                     align-items: center;
+                    @media screen and (max-width: 480px) {
+                        max-width: 100%;
+                    }
                     h4 {
                         font-size: 1.5rem;
                         margin-bottom: 0.25rem;
@@ -250,6 +259,9 @@ main {
                     transform: rotateZ(1deg);
                     @include flex($justify: space-between, $align: center, $gap: 5rem);
                     padding: 5rem 4rem;
+                    @media screen and (max-width: 768px) {
+                        flex-direction: column;
+                    }
                     .cta-text {
                         color: $white;
                         h2 {

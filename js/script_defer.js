@@ -34,13 +34,29 @@ function  closeSideMenu() {
 
 
 const items = document.querySelectorAll('.card-item');
+
 const expand = (item, i) => {
+  // On vérifie la largeur de l'écran
+  const screenWidth = window.innerWidth;
+  const isMobile = screenWidth < 992;
+
+  // Si l'écran est mobile, on affiche toujours le contenu de la carte
+  if (isMobile) {
+    const content = item.querySelector('.card-item-content');
+    content.style.display = 'flex';
+
+    // On retourne pour éviter l'exécution du reste du code
+    return;
+  }
+
+  // Si l'écran est large, on gère l'expansion de la carte
   items.forEach((it, ind) => {
     if (i === ind) return;
     it.clicked = false;
     const content = it.querySelector('.card-item-content');
     content.style.display = 'none';
   });
+
   gsap.to(items, {
     width: item.clicked ? '20vw' : '10vw',
     duration: 2,
@@ -55,12 +71,17 @@ const expand = (item, i) => {
   const content = item.querySelector('.card-item-content');
   content.style.display = item.clicked ? 'flex' : 'none';
 };
+
 items.forEach((item, i) => {
   item.clicked = false;
-  item.addEventListener('click', () => expand(item, i));
+
+  // Si l'écran est mobile, on affiche toujours le contenu de la carte
+  const screenWidth = window.innerWidth;
+  const isMobile = screenWidth < 992;
+  if (isMobile) {
+    const content = item.querySelector('.card-item-content');
+    content.style.display = 'flex';
+  } else {
+    item.addEventListener('click', () => expand(item, i));
+  }
 });
-
-
-
-
-
