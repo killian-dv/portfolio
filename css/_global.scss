@@ -10,10 +10,14 @@
 $black: #0f1825;
 $white: #fff;
 $grey: #6a6c6c;
+$light-grey: #b6b5bf;
 $light-blue: #33cccc;
 
 $transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -38,4 +42,9 @@ h2 {
     @media screen and (max-width: 991px) {
         font-size: 2.25rem;
     }
+}
+
+p {
+    font-weight: 300;
+    line-height: 1.5;
 }

@@ -25,43 +25,56 @@ main {
     }
     #home {
         background-image: linear-gradient(180deg,transparent 80%,#0b111a 0,$black);
+        @media screen and (max-width: 991px) {
+            background-image: linear-gradient(180deg,transparent 85%,#0b111a 0,$black);
+        }
+        @media screen and (max-width: 768px) {
+            background-image: linear-gradient(180deg,transparent 90%,#0b111a 0,$black);
+        }
+        @media screen and (max-width: 480px) {
+            background-image: linear-gradient(180deg,transparent 92%,#0b111a 0,$black);
+        }
         .section-container {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            max-width: 1200px;
             margin: 20vh auto;
+            @extend %sectionStyle;
             h1 {
-                font-size: 6vw;
+                font-size:calc(2rem + 4vw);
                 text-align: center;
                 margin-bottom: 2rem;
             }
             p {
-                font-size: 1.5vw;
+                font-size:calc(1rem + 1vw);
                 text-align: center;
-                font-weight: 300;
+                @media screen and (max-width: 480px) {
+                    font-size: 1rem;
+                }
             }
             .button-container {
                 @include flex($justify: center, $align: center, $gap: 24px);
                 margin-top: 2rem;
-                a {
-                    @include flex($justify: center, $align: center);
-                    img {
-                        border: 0;
-                        vertical-align: middle;
-                        display: inline-block;
-                        max-width: 100%;
-                        width: 15px;
-                        height: 15px;
-                        margin-left: 12px;
-                    }
+                @media screen and (max-width: 768px) {
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 2rem;
                 }
                 .primary-button {
                     @include button($bg-color:$black, $border:none, $padding:24px 48px, $color:$white);
+                    @media screen and (max-width: 480px) {
+                        width: 90%;
+                        span {
+                            white-space: normal;
+                        }
+                    }
                 }
                 .secondary-button {
                     @include button($bg-color:$white, $border:none, $padding:24px 48px, $color:$black);
+                    @media screen and (max-width: 480px) {
+                        width: 90%;
+                    }
                 }
             }
         }
@@ -69,7 +82,7 @@ main {
             border-radius: 10px;
             background-color: $light-blue;
             transform: rotateZ(-2deg);
-            width: 80%;
+            width: 90%;
             max-width: 1600px;
             height: auto;
             margin: auto;
@@ -99,8 +112,6 @@ main {
                 }
                 p {
                     width: 40%;
-                    font-weight: 300;
-                    line-height: 1.5;
                 }
                 @media screen and (max-width: 768px) {
                     flex-direction: column;
@@ -152,10 +163,9 @@ main {
                     h3 {
                         font-size: 1.5rem;
                         margin-bottom: 0.25rem;
+                        text-align: center;
                     }
                     p {
-                        font-size: 1rem;
-                        font-weight: 300;
                         text-align: center;
                         color: $grey;
                     }
@@ -170,22 +180,89 @@ main {
             h2 {
                 @extend %sectionTitle;
             }
-            // width: 100%;
-            overflow-x: visible;
         }
         .container {
             text-align: center;
             white-space: nowrap;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
             .card-item {
-                width: 15vw;
+                width: 20vw;
                 height: 75vh;
                 background-position: center;
-                background-size: 75vh;
+                background-size: cover;
                 margin: 1vw;
                 border-radius: 3vw;
-                display: inline-block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 cursor: pointer;
+                .card-item-content {
+                    display: none;
+                    background-color: $white;
+                    padding: 2rem 4rem;
+                    border-radius: 10px;
+                    max-width: 80%;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 1rem;
+                    align-items: center;
+                    h4 {
+                        font-size: 1.5rem;
+                        margin-bottom: 0.25rem;
+                    }
+                    p {
+                        color: $black;
+                        white-space: normal;
+                        width: 100%;
+                    }
+                    .primary-button {
+                        @include button($bg-color:$black, $border:none, $padding:24px 48px, $color:$white);
+                        width: fit-content;
+                    }
+                }
+            }
+            
+        }
+    }
+    #contact {
+        padding: 7rem 0;
+        .wrapper-1 {
+            border-radius: 10px;
+            background-color: $light-blue;
+            width: 80%;
+            max-width: 1250px;
+            height: auto;
+            margin: auto;
+            transform: rotateZ(1deg);
+            .wrapper-2 {
+                border-radius: 10px;
+                background-color: $black;
+                width: 100%;
+                height: 100%;
+                transform: rotateZ(-2deg);
+                .container {
+                    transform: rotateZ(1deg);
+                    @include flex($justify: space-between, $align: center, $gap: 5rem);
+                    padding: 5rem 4rem;
+                    .cta-text {
+                        color: $white;
+                        h2 {
+                            @extend %sectionTitle;
+                        }
+                        p {
+                            color: $light-grey;
+                        }
+                    }
+                    .primary-button {
+                        @include button($bg-color:$white, $border:none, $padding:24px 48px, $color:$black);
+                    }
+                }
             }
         }
     }

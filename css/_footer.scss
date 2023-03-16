@@ -1,0 +1,26 @@
+footer {
+    background-color: $black;
+    color: white;
+    padding: 3.5rem;
+    @include flex($justify: space-between, $align: center);
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .social-container {
+        @include flex($justify: space-between, $align: center, $gap: 1.5rem);
+        a {
+            transition: $transition;
+            svg {
+                color: $white;
+                width: 30px;
+                height: 30px;
+            }
+            &:hover svg {
+                transform: scale(1.1);
+                color: $light-blue;
+            }
+        }
+    }
+}
