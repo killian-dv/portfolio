@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -30,7 +31,7 @@
             <label for="active" class="menu-btn"><span></span></label>
             <div class="wrapper">
             <ul>
-                <li><a href="/#home">Accueil</a></li>
+                <li><a href="/">Accueil</a></li>
                 <li><a href="/#about">À propos</a></li>
                 <li><a href="/#creations">Réalisations</a></li>
                 <li><a href="/#contact">Contact</a></li>
@@ -66,6 +67,15 @@
                             </div>
                             <button type="submit">Envoyer</button>
                         </form>
+                        <?php
+            // s'il y a une erreur
+            if (!empty($_SESSION['erreur'])) {
+                // on affiche cette erreur
+                echo '<div id="message_contact" class="error_contact">'.$_SESSION['erreur'].'</div>'."\n";
+                // on n'oublie pas de vider l'erreur juste après l'avoir affichée
+                $_SESSION['erreur']='';
+            }
+            ?>
                     </div>
                 </div>
             </div>
