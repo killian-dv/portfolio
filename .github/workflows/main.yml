@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Deploy to SFTP
 
 on:
   push:
@@ -6,18 +6,18 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy to SFTP
+        uses: jakejarvis/sftp-deploy-action@4.2.3
         with:
           server: ${{ secrets.SERVER }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          local-dir: ./
-          server-dir: /var/www/portfolio/
+          local_dir: ./
+          remote_path: /var/www/portfolio/
