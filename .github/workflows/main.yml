@@ -13,12 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: deploy file to server
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Deploy to SFTP
+        uses: jakejarvis/sftp-deploy-action@4.2.3
         with:
-            username: '${{ secrets.USERNAME }}'
-            server: '${{ secrets.SERVER }}'
-            ssh_private_key: ${{ secrets.PASSWORD }}
-            local_path: './'
-            remote_path: '/var/www/umiapp'
-            sftpArgs: '-o ConnectTimeout=5'
+          server: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          local_dir: ./  # Chemin vers le répertoire contenant votre page HTML et autres fichiers
+          remote_path: /var/www/portfolio/  # Chemin vers le répertoire de destination sur le serveur SFTP
