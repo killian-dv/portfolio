@@ -6,20 +6,18 @@ on:
       - main
 
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  Upload-to-SFTP:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: 🚚 Get latest code                     # Checkout the latest code
+        uses: actions/checkout@v2
 
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.41
+      - name: 📂 SFTP uploader                       # Upload to SFTP 
+        uses: wangyucode/sftp-upload-action@v2.0.2
         with:
-          ftp-server: ${{ secrets.SERVER }}
-          ftp-username: ${{ secrets.USERNAME }}
-          ftp-password: ${{ secrets.PASSWORD }}
-          local-dir: ./
-          remote-dir: /var/www/portfolio/
-          protocol: sftp
-          port: 22
+          host: ${{ secrets.SERVER }}                  # Recommended to put the credentials in github secrets.
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          localDir: './'                              # Required, Absolute or relative to cwd.
+          remoteDir: '/var/www/portfolio/'                             # Required, Absolute path only.
+          exclude: '.git*,.DS_Store'                 # Optional. exclude patterns (glob) like .gitignore, use ',' to split, Default to ''.
