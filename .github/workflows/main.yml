@@ -6,18 +6,20 @@ on:
       - main
 
 jobs:
-  deploy:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy to SFTP
-        uses: jakejarvis/sftp-deploy-action@4.2.3
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.41
         with:
-          server: ${{ secrets.SERVER }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          local_dir: ./  # Chemin vers le répertoire contenant votre page HTML et autres fichiers
-          remote_path: /var/www/portfolio/  # Chemin vers le répertoire de destination sur le serveur SFTP
+          ftp-server: ${{ secrets.SERVER }}
+          ftp-username: ${{ secrets.USERNAME }}
+          ftp-password: ${{ secrets.PASSWORD }}
+          local-dir: ./
+          remote-dir: /var/www/portfolio/
+          protocol: sftp
+          port: 22
